@@ -10,7 +10,7 @@ class WeatherService {
       'lat' => $lat,
       'lon' => $lon,
       'units' => 'metric',
-      'appid' => config('services.openweather.key')
+      'appid' => config('openweather.api.key')
     ]);
 
     if (!$weatherResponse->successful()) {
