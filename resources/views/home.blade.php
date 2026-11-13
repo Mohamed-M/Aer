@@ -5,7 +5,7 @@
           <template x-if="city_id != null">
             <div class="bg-green-100 border border-green-500 text-green-700 px-4 py-3 mb-7" role="alert">
               <p class="font-bold">Welcome</p>
-              <p class="text-sm">Aer is a weather app for cities in Ontario. Please choose above</p>
+              <p class="text-sm">Aer is a weather app for cities in Ontario. Please choose below</p>
             </div>
           </template>
         @endif
