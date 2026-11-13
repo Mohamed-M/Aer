@@ -5,9 +5,19 @@ import Alpine from 'alpinejs';
 window.Alpine = Alpine;
 
 document.addEventListener('alpine:init', (e) => {
-  Alpine.data('weather', () => ({
-    city_id: '',
+
+  Alpine.data('weather', (savedCityId) => ({
+    city_id: savedCityId,
     forecast: {},
+
+    init() {
+      if (this.city_id) {
+        this.$nextTick(() => {
+          const select = this.$el.querySelector('select');
+          this.getWeather({ target: select })
+        })
+      }
+    },
 
     async getWeather(e) {
       const option = e.target.selectedOptions[0];
