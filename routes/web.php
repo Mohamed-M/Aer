@@ -10,10 +10,9 @@ Route::get('/', function () {
 Route::middleware('auth')->group(function() {
   Route::get('/', [HomeController::class, 'index'])->name('home');
 
-  Route::post('/select', [HomeController::class, 'select'])->name('home.select');
+  Route::get('/select', [HomeController::class, 'select'])->name('home.select');
   
-  Route::post('/save', [HomeController::class, 'save'])->name('home.save');
+  Route::post('/store', [HomeController::class, 'store'])->name('home.store');
 });
-
 
 require __DIR__.'/auth.php';
