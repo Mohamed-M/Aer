@@ -16,6 +16,11 @@ document.addEventListener('alpine:init', (e) => {
           const select = this.$el.querySelector('select');
           this.getWeather({ target: select })
         })
+      } else {
+        const select = this.$el.querySelector('select');
+        select.selectedIndex = 0;
+        this.city_id = select.value;
+        this.getWeather({ target: select })
       }
     },
 
