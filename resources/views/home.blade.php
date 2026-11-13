@@ -5,14 +5,15 @@
           <div class="p-6 text-gray-900 w-full">
             <form action="{{ route('home.store') }}" method="post" class="flex justify-between">
                 @csrf
-                <div x-data="weather()">
+                <div x-data="weather" x-init="city_id = '{{ $userCityId }}'">
                   <label class="text-sm mr-5">Select a city:</label>
                   <select name="city_id" x-model="city_id" @change="getWeather($event)">
                     @foreach($cities as $city)
                       <option 
                         data-lat="{{ $city->lat }}"
                         data-lon="{{ $city->lon }}"
-                        value="{{ $city->id }}">{{ $city->name }}</option>
+                        value="{{ $city->id }}"
+                        @selected($userCityId == $city->id)>{{ $city->name }}</option>
                     @endforeach
                   </select>
                 </div>

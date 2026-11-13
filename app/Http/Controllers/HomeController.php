@@ -10,7 +10,8 @@ class HomeController extends Controller
 {
     public function index() {
       $cities = City::all();
-      return view('home')->with('cities', $cities);
+      $userCityId = Auth::user()->city_id;
+      return view('home')->with(['cities' => $cities, 'userCityId' => $userCityId]);
     }
 
     public function store(Request $request) {
