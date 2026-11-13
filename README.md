@@ -10,6 +10,14 @@
 - Tailwind
 - Docker Desktop
 
+---
+
+![Screenshot](./screenshot.png)
+![diagram](./diagram.png)
+
+---
+
+
 ## Installation
 
 1. Install dependencies
@@ -31,5 +39,5 @@
     sail artisan db:seed
     ```
 
-
+---
 
