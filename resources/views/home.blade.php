@@ -3,7 +3,7 @@
       <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
         <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
           <div class="p-6 text-gray-900 w-full">
-            <form action="{{ route('home.store') }}" method="get" class="flex justify-between">
+            <form action="{{ route('home.store') }}" method="post" class="flex justify-between">
                 @csrf
                 <div x-data="weather()">
                   <label class="text-sm mr-5">Select a city:</label>
