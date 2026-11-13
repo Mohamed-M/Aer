@@ -10,8 +10,6 @@ Route::get('/', function () {
 Route::middleware('auth')->group(function() {
   Route::get('/', [HomeController::class, 'index'])->name('home');
 
-  Route::get('/select', [HomeController::class, 'select'])->name('home.select');
-  
   Route::post('/store', [HomeController::class, 'store'])->name('home.store');
 });
 
