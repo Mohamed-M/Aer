@@ -24,11 +24,12 @@
           </div>
       </div>
       <template x-for="(date, index) in (forecast.daily?.time || []).slice(0, 5)" :key="date">
-        <div class="p-4 border rounded mb-3 bg-black text-white">
-            <h3 x-text="date"></h3>
-            <p>High: <span x-text="forecast.daily.temperature_2m_max[index] + '°C'"></span></p>
-            <p>Low: <span x-text="forecast.daily.temperature_2m_min[index] + '°C'"></span>
-            </p>
+        <div class="flex justify-between items-center p-4 border rounded mb-3 bg-black text-white">
+            <h3 x-text="new Date(date).toLocaleDateString()"></h3>
+            <div>
+              <small class="block">High: <strong x-text="forecast.daily.temperature_2m_max[index] + '°C'"></strong></small>
+              <small class="block">Low: <strong x-text="forecast.daily.temperature_2m_min[index] + '°C'"></strong></small>
+            </div>
         </div>
       </template>
       </div>
